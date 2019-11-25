@@ -2,13 +2,16 @@ const mongoose = require('mongoose');
 
 const LocaisSchema = new mongoose.Schema({
     
-    nome: { type: String },
-    email: {type: String, required: true},
-    cpf: {type: Number},
-    dataNascimento: { type: Date },
-    estadoCivil: { type: String},
+    endereco: {type: String},
+    bairro: {type: String},
+    cidade: {type: String},
+    estado: {type: String},
+    cep: {type: Number},
     telefone: {type: Number},
-    comprou: {type: Boolean}
+    email: {type: String},
+    categoria: {type: String},
+    tipoacessibilidade: {type: String},
+    infoadicionais: {type: String}
 
 }, {
     versionKey: false
