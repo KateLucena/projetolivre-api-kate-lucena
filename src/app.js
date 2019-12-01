@@ -6,17 +6,17 @@ const app = express();
 
 const index = require('./routes/index')
 
-// mongoose.connect("mongodb://localhost:27017/reprograma", { useNewUrlParser: true});
+mongoose.connect("mongodb://localhost:27017/reprograma", { useNewUrlParser: true});
 
-// let db = mongoose.connection;
+let db = mongoose.connection;
 
-// db.on("error", console.log.bind("connection error:"))
+db.on("error", console.log.bind("connection error:"))
 
-// db.once("open", function (){
-//     console.log("conexão feita com sucesso.")
-// })
+db.once("open", function (){
+    console.log("conexão feita com sucesso.")
+})
 
-//const locais = require("./routes/locaisRoute")
+const locais = require("./routes/locaisRoute")
   
 app.use(express.json());
   
@@ -30,10 +30,10 @@ app.use(function(req, res, next) {
 })
 
 app.use('/', index)
-// app.use(express.static("public"));
+app.use(express.static("public"));
   
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
   
-//app.use("/locais", locais)
+app.use("/locais", locais)
   
 module.exports = app
