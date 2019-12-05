@@ -8,10 +8,34 @@ exports.get = (req, res) => {
         res.status(200).send(locais);
     })
 }
+exports.getId = (req, res) => {
+    const locaisId = req.params.id;
+    Locais.findById(locaisId, function (err, locais) {
+        if (err) return res.status(500).send(err);
+    
+        if (!locais) {
+          return res.status(200).send({ message: `Infelizmente não localizamos locais com este id: ${locaisId}` });
+        }
+    
+        res.status(200).send(locais);
+      })
+}
 exports.getCategoria = (req, res) => {
     const categoria = req.params.categoria;
     Locais.find({ categoria }, function (err, locais) {
         if (err) res.status(500).send(err);
+        res.status(200).send(locais);
+    })
+}
+exports.getAcessibilidade = (req, res) => {
+    const acessibilidade = req.params.acessibilidade;
+    Locais.find({acessibilidade}, function(err, locais){
+        if (err) return res.status(500).send(err);
+
+        if (!locais) {
+          return res.status(200).send({ message: `Infelizmente não localizamos locais com essa acessibilidade: ${acessibilidade}` });
+        }
+    
         res.status(200).send(locais);
     })
 }
@@ -30,7 +54,7 @@ exports.post = function (req, res) {
 }
 exports.updateLocais = (req, res) => {
     Locais.update(
-        { _id: req.params._id },
+        { _id: req.params.id },
         { $set: req.body },
         { upsert: true },
         function (err) {
@@ -40,8 +64,8 @@ exports.updateLocais = (req, res) => {
 
 }
 exports.deleteLocais = (req, res) => {
-    const id = req.params.id
-    Locais.findOne({id}, function(err, locais){
+    const id = req.params.id;
+    Locais.findById(id, function(err, locais){
         if (err) res.status(500).send(err);
 
         if(!locais) return res.status(200).send({message:'Infelizmente não localizamos o Id'})
