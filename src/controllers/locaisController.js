@@ -1,4 +1,6 @@
 const Locais = require('../model/locais');
+const fetch = require('node-fetch');
+
 
 
 exports.get = (req, res) => {
@@ -27,20 +29,26 @@ exports.getCategoria = (req, res) => {
         res.status(200).send(locais);
     })
 }
+
 exports.getAcessibilidade = (req, res) => {
     const acessibilidade = req.params.acessibilidade;
-    Locais.find({acessibilidade}, function(err, locais){
-        if (err) return res.status(500).send(err);
+    Locais.find(function (err, locais){
+        if (err) res.status(500).send(err);
 
-        if (!locais) {
-          return res.status(200).send({ message: `Infelizmente não localizamos locais com essa acessibilidade: ${acessibilidade}` });
-        }
-    
-        res.status(200).send(locais);
+        const locaisAcess = locais.filter(locais => locais.acessibilidade == acessibilidade)
+        
+        res.status(200).send(locaisAcess)  
     })
+    
 }
-exports.post = function (req, res) {
+    
+exports.post = async function (req, res) {
     let locais = new Locais(req.body);
+
+    locais.endereco = await buscarCeps(locais.cep).then(endereco => endereco.logradouro)
+    locais.bairro = await buscarCeps(locais.cep).then(bairro => bairro.bairro)
+    locais.cidade = await buscarCeps(locais.cep).then(cidade => cidade.localidade)
+    locais.estado = await buscarCeps(locais.cep).then(estado => estado.uf)
 
     locais.save(function (err) {
         if (err) res.status(500).send(err);
@@ -51,6 +59,15 @@ exports.post = function (req, res) {
             });
         }
     });
+}
+const buscarCeps = (cep) => {
+
+    return fetch(`https://viacep.com.br/ws/${cep}/json/`, {
+        method: 'GET',
+    })
+        .then(response => response.json())
+        .then(json => json)
+
 }
 exports.updateLocais = (req, res) => {
     Locais.update(
