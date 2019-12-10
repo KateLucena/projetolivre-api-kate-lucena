@@ -5,8 +5,8 @@ const bodyParser = require('body-parser');
 const app = express();
 
 const index = require('./routes/index')
-
-mongoose.connect("mongodb://localhost:27017/reprograma", {useNewUrlParser: true,
+//mongodb://localhost:27017/reprograma
+mongoose.connect("mongodb+srv://admin:admin123@reprograma-0ugbm.mongodb.net/reprograma", {useNewUrlParser: true,
 useUnifiedTopology: true});
 
 let db = mongoose.connection;

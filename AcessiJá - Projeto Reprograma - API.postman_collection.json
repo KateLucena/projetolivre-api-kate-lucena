@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "cebdf28d-0ca3-4f52-9f9b-91393d878879",
-		"name": "AcessiJá - Projeto Livre - API",
+		"name": "AcessiJá - Projeto Reprograma - API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -61,7 +61,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/locais/categoria",
+					"raw": "http://localhost:3000/locais/noitada/filtrar",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -69,7 +69,8 @@
 					"port": "3000",
 					"path": [
 						"locais",
-						"categoria"
+						"noitada",
+						"filtrar"
 					]
 				}
 			},
@@ -81,7 +82,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/locais/tipoacessibilidade",
+					"raw": "http://localhost:3000/locais/Estacionamento/buscar",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -89,7 +90,8 @@
 					"port": "3000",
 					"path": [
 						"locais",
-						"tipoacessibilidade"
+						"Estacionamento",
+						"buscar"
 					]
 				}
 			},
@@ -119,7 +121,18 @@
 			"name": "InserirLocais",
 			"request": {
 				"method": "POST",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\t\r\n\t\t\"titulo\": \"Coco-buk\",\r\n        \"numero\": 440,\r\n        \"cep\": 111111,\r\n        \"telefone\": 11111111,\r\n        \"email\": \"teste50\",\r\n        \"categoria\": \"restaurante\",\r\n        \"acessibilidade\": [\"Rampa\",\"Estacionamento\",\"Banheiro Adaptado\"],\r\n        \"infoadicionais\": \"teste\"\r\n    }"
+				},
 				"url": {
 					"raw": "http://localhost:3000/locais",
 					"protocol": "http",
@@ -138,7 +151,18 @@
 			"name": "AlterarLocais",
 			"request": {
 				"method": "PUT",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"categoria\": \"noitada\"\n}"
+				},
 				"url": {
 					"raw": "http://localhost:3000/locais/id",
 					"protocol": "http",

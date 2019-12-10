@@ -68,7 +68,7 @@ const buscarCeps = (cep) => {
 
 }
 exports.updateLocais = (req, res) => {
-    Locais.update(
+    Locais.updateOne(
         { _id: req.params.id },
         { $set: req.body },
         { upsert: true },
