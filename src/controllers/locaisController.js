@@ -34,9 +34,7 @@ exports.getAcessibilidade = (req, res) => {
     const acessibilidade = req.params.acessibilidade;
     Locais.find(function (err, locais){
         if (err) res.status(500).send(err);
-
-        const locaisAcess = locais.filter(locais => locais.acessibilidade == acessibilidade)
-        
+        const locaisAcess = locais.filter(locais => locais.acessibilidade.find(a => a == acessibilidade))
         res.status(200).send(locaisAcess)  
     })
     
