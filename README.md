@@ -1,7 +1,7 @@
 ![reprograma](https://user-images.githubusercontent.com/53880309/67444197-66567e00-f5de-11e9-87cf-fcaa84803374.png)
 # **_Projeto livre Reprograma_**
 
-## AcessiJá - API para gerenciar locais em São Paulo que possuem acessibilidade para pessoas com deficiência.
+## AcessiJá - API para gerenciar locais em São Paulo que possuam acessibilidade para pessoas com deficiência.
 
 
 **Rotas realizadas**
