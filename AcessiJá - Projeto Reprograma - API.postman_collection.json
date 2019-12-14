@@ -6,197 +6,401 @@
 	},
 	"item": [
 		{
-			"name": "Locais.home",
-			"event": [
+			"name": "Locais",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"id": "3ce412b2-c273-4418-958a-88d823afb910",
-						"exec": [
-							""
+					"name": "InserirLocais",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
 						],
-						"type": "text/javascript"
-					}
+						"body": {
+							"mode": "raw",
+							"raw": "{\t\t\r\n\t\t\"titulo\": \"Coco-buk\",\r\n        \"numero\": 440,\r\n        \"cep\": 111111,\r\n        \"telefone\": 11111111,\r\n        \"email\": \"teste50\",\r\n        \"categoria\": \"restaurante\",\r\n        \"acessibilidade\": [\"Rampa\",\"Estacionamento\",\"Banheiro Adaptado\"],\r\n        \"infoadicionais\": \"teste\"\r\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:3000/locais",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"locais"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Locais.home",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "3ce412b2-c273-4418-958a-88d823afb910",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListarTodosLocais",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/locais",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"locais"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LocaisPorNome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/locais/titulo/nome",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"locais",
+								"titulo",
+								"nome"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LocaisPorCategoria",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/locais/categoria/filtrar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"locais",
+								"categoria",
+								"filtrar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LocaisPorTipoDeAcessibilidade",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/locais/acessibilidade/buscar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"locais",
+								"acessibilidade",
+								"buscar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LocaisPorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/locais/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"locais",
+								"id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AlterarLocais",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1NzYzMDM1ODAsImV4cCI6MTU3NjU2Mjc4MH0.IOXCFXmZ4231faSPx7ySG1wXAVuo-x-SCmLyCOeb3_8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"categoria\": \"cultura\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/locais/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"locais",
+								"id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeletarLocais",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1NzYzMDM1ODAsImV4cCI6MTU3NjU2Mjc4MH0.IOXCFXmZ4231faSPx7ySG1wXAVuo-x-SCmLyCOeb3_8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/locais/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"locais",
+								"id"
+							]
+						}
+					},
+					"response": []
 				}
 			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						""
-					]
-				}
-			},
-			"response": []
+			"protocolProfileBehavior": {}
 		},
 		{
-			"name": "ListarTodosLocais",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/locais",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"locais"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "LocaisPorCategoria",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/locais/noitada/filtrar",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"locais",
-						"noitada",
-						"filtrar"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "LocaisPorTipoDeAcessibilidade",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/locais/Estacionamento/buscar",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"locais",
-						"Estacionamento",
-						"buscar"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "LocaisPorId",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/locais/id",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"locais",
-						"id"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "InserirLocais",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\t\t\r\n\t\t\"titulo\": \"Coco-buk\",\r\n        \"numero\": 440,\r\n        \"cep\": 111111,\r\n        \"telefone\": 11111111,\r\n        \"email\": \"teste50\",\r\n        \"categoria\": \"restaurante\",\r\n        \"acessibilidade\": [\"Rampa\",\"Estacionamento\",\"Banheiro Adaptado\"],\r\n        \"infoadicionais\": \"teste\"\r\n    }"
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "InserirUsuarios",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nome\":\"Keila\",\n\t\"email\":\"keila@gmail.com\",\n\t\"senha\":\"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3000/locais",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"locais"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "AlterarLocais",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"categoria\": \"noitada\"\n}"
+				{
+					"name": "GerarTokenUsuario",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\t{\t\r\n        \"email\": \"kate@gmail.com\",\r\n        \"senha\": \"1234\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/usuarios/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios",
+								"auth"
+							]
+						}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3000/locais/id",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"locais",
-						"id"
-					]
+				{
+					"name": "ListarTodosUsuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UsuariosPorNome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/usuarios/nome/buscar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios",
+								"nome",
+								"buscar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UsuariosPorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/usuarios/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios",
+								"id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeletarUsuarios",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/usuarios/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usuarios",
+								"id"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
-		},
-		{
-			"name": "DeletarLocais",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/locais/id",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"locais",
-						"id"
-					]
-				}
-			},
-			"response": []
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"protocolProfileBehavior": {}

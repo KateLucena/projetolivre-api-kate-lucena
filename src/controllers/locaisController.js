@@ -22,6 +22,14 @@ exports.getId = (req, res) => {
         res.status(200).send(locais);
       })
 }
+exports.getTitulo = (req, res) => {
+    const titulo = req.params.titulo;
+    Locais.find({ titulo }, function (err, locais) {
+        if (err) res.status(500).send(err);
+        res.status(200).send(locais);
+    })
+}
+
 exports.getCategoria = (req, res) => {
     const categoria = req.params.categoria;
     Locais.find({ categoria }, function (err, locais) {
