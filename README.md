@@ -4,7 +4,7 @@
 ### AcessiJá - API para gerenciar locais em São Paulo que possuam acessibilidade para pessoas com deficiência.
 
 #### Objetivo:
-Disponibilizar informações sobre locais que possuam acessibilidade, para que assim, as pessoas com deficiência possam acessá-los e serem recebidos adequadamente.
+Disponibilizar informações sobre locais que possuam acessibilidade, para que assim, as pessoas com deficiência possam acessá-las e serem recebidas adequadamente.
 
 **Rotas realizadas**
 
