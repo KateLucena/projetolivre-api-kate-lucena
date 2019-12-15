@@ -35,19 +35,23 @@ Usuarios
  - Node.js
  - MongoDB
  - NPM
- - Express.js
- - Body-Parser
- - Mongoose
- - Bcryptjs
- - JsonWebToken
  - Consumo de API de CEP
- - Nodemon
  - Postman
  - Visual Studio Code
  - Git e GitHub
  - APIDoc
  - Heroku
-
-
-
+ 
+**Dependências utilizadas**
+ - Express.js
+ - Nodemon
+ - Body-Parser
+ - Mongoose
+ - Bcryptjs
+ - JsonWebToken
+ - Node-fetch
+ - Util promisify
+ 
+ [Documentação API] (https://github.com/KateLucena/projetolivre-api-kate-lucena/blob/master/doc/index.html)
+ 
 
