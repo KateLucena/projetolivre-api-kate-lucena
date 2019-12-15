@@ -54,4 +54,5 @@ Usuarios
  
  [Documentação API] (https://github.com/KateLucena/projetolivre-api-kate-lucena/blob/master/doc/index.html)
  
+ ![obrigada](https://user-images.githubusercontent.com/53880309/70868885-d12f9000-1f63-11ea-9a53-d8a10e6973c9.gif)
 
