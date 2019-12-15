@@ -26,6 +26,10 @@ exports.getTitulo = (req, res) => {
     const titulo = req.params.titulo;
     Locais.find({ titulo }, function (err, locais) {
         if (err) res.status(500).send(err);
+
+        if (!locais) {
+            return res.status(200).send({ message: `Infelizmente não localizamos locais com este nome: ${titulo}` });
+          }
         res.status(200).send(locais);
     })
 }
