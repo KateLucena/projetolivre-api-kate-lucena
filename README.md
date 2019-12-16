@@ -31,9 +31,8 @@ Usuarios
 
 
 **Tecnologias e Recursos utilizados**
- - JavaScript
  - Node.js
- - MongoDB
+ - MongoDB na nuvem
  - NPM
  - Consumo de API de CEP
  - Postman
