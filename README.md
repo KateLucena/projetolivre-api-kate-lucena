@@ -52,7 +52,8 @@ Usuarios
  - Node-fetch
  - Util promisify
  
- [Documentação API] (https://acessija-api.herokuapp.com/api-doc) /br
+ [Documentação API] (https://acessija-api.herokuapp.com/api-doc)  
+ 
  [Deploy - Heroku] (https://acessija-api.herokuapp.com/locais)
  
  ![obrigada](https://user-images.githubusercontent.com/53880309/70868885-d12f9000-1f63-11ea-9a53-d8a10e6973c9.gif)
