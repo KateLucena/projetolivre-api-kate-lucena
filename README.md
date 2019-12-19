@@ -53,7 +53,9 @@ Usuarios
  
  [Documentação API] (https://acessija-api.herokuapp.com/api-doc)  
  
- [Deploy - Heroku] (https://acessija-api.herokuapp.com/locais)
- 
+ [Deploy - Heroku] (https://acessija-api.herokuapp.com/locais)  
+
+ [Apresentação do projeto] (https://prezi.com/view/Ei2DhJAtpKAGepK5BoVn/)  
+
  ![obrigada](https://user-images.githubusercontent.com/53880309/70868885-d12f9000-1f63-11ea-9a53-d8a10e6973c9.gif)
 
